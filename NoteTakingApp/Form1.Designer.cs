@@ -77,6 +77,7 @@
             // 
             // previousNotes
             // 
+            this.previousNotes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.previousNotes.BackgroundColor = System.Drawing.Color.White;
             this.previousNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.previousNotes.Location = new System.Drawing.Point(3, 12);
