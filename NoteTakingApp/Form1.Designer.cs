@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.titleTxtBox = new System.Windows.Forms.Label();
-            this.noteTxtBox = new System.Windows.Forms.Label();
+            this.titleTxtBox = new System.Windows.Forms.TextBox();
+            this.noteTxtBx = new System.Windows.Forms.TextBox();
+            this.titleLbl = new System.Windows.Forms.Label();
+            this.noteLbl = new System.Windows.Forms.Label();
             this.previousNotes = new System.Windows.Forms.DataGridView();
             this.loadBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
@@ -40,40 +40,40 @@
             ((System.ComponentModel.ISupportInitialize)(this.previousNotes)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(427, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(602, 23);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(427, 83);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(602, 559);
-            this.textBox2.TabIndex = 1;
-            // 
             // titleTxtBox
             // 
-            this.titleTxtBox.Font = new System.Drawing.Font("Georgia", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.titleTxtBox.Location = new System.Drawing.Point(427, 8);
+            this.titleTxtBox.Location = new System.Drawing.Point(427, 34);
             this.titleTxtBox.Name = "titleTxtBox";
             this.titleTxtBox.Size = new System.Drawing.Size(602, 23);
-            this.titleTxtBox.TabIndex = 2;
-            this.titleTxtBox.Text = "Title:";
-            this.titleTxtBox.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.titleTxtBox.TabIndex = 0;
             // 
-            // noteTxtBox
+            // noteTxtBx
             // 
-            this.noteTxtBox.Font = new System.Drawing.Font("Georgia", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.noteTxtBox.Location = new System.Drawing.Point(427, 57);
-            this.noteTxtBox.Name = "noteTxtBox";
-            this.noteTxtBox.Size = new System.Drawing.Size(602, 23);
-            this.noteTxtBox.TabIndex = 3;
-            this.noteTxtBox.Text = "Note:";
-            this.noteTxtBox.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.noteTxtBx.Location = new System.Drawing.Point(427, 83);
+            this.noteTxtBx.Multiline = true;
+            this.noteTxtBx.Name = "noteTxtBx";
+            this.noteTxtBx.Size = new System.Drawing.Size(602, 559);
+            this.noteTxtBx.TabIndex = 1;
+            // 
+            // titleLbl
+            // 
+            this.titleLbl.Font = new System.Drawing.Font("Georgia", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.titleLbl.Location = new System.Drawing.Point(427, 8);
+            this.titleLbl.Name = "titleLbl";
+            this.titleLbl.Size = new System.Drawing.Size(602, 23);
+            this.titleLbl.TabIndex = 2;
+            this.titleLbl.Text = "Title:";
+            this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // noteLbl
+            // 
+            this.noteLbl.Font = new System.Drawing.Font("Georgia", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.noteLbl.Location = new System.Drawing.Point(427, 57);
+            this.noteLbl.Name = "noteLbl";
+            this.noteLbl.Size = new System.Drawing.Size(602, 23);
+            this.noteLbl.TabIndex = 3;
+            this.noteLbl.Text = "Note:";
+            this.noteLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // previousNotes
             // 
@@ -84,6 +84,7 @@
             this.previousNotes.RowTemplate.Height = 25;
             this.previousNotes.Size = new System.Drawing.Size(418, 504);
             this.previousNotes.TabIndex = 4;
+            this.previousNotes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.previousNotes_CellDoubleClick);
             // 
             // loadBtn
             // 
@@ -144,10 +145,10 @@
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.previousNotes);
-            this.Controls.Add(this.noteTxtBox);
+            this.Controls.Add(this.noteLbl);
+            this.Controls.Add(this.titleLbl);
+            this.Controls.Add(this.noteTxtBx);
             this.Controls.Add(this.titleTxtBox);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Name = "NoteTaker";
             this.Text = "Note Taker";
             this.Load += new System.EventHandler(this.NoteTaker_Load);
@@ -159,10 +160,10 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private Label titleTxtBox;
-        private Label noteTxtBox;
+        private TextBox titleTxtBox;
+        private TextBox noteTxtBx;
+        private Label titleLbl;
+        private Label noteLbl;
         private DataGridView previousNotes;
         private Button loadBtn;
         private Button deleteBtn;
