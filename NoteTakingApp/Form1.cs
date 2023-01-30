@@ -34,7 +34,7 @@ namespace NoteTakingApp
         private void loadBtn_Click(object sender, EventArgs e)
         {
             titleTxtBox.Text = notes.Rows[previousNotes.CurrentCell.RowIndex].ItemArray[0].ToString();
-            titleTxtBox.Text = notes.Rows[previousNotes.CurrentCell.RowIndex].ItemArray[1].ToString();
+            noteTxtBx.Text = notes.Rows[previousNotes.CurrentCell.RowIndex].ItemArray[1].ToString();
             editing = true;
         }
 
